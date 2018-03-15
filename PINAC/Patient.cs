@@ -16,6 +16,7 @@ namespace PINAC
         public List<string> antePerso { get; set; }
         public List<string> anteFamil { get; set; }
         public List<string> Risques { get; set; }
-
+        public List<Consultation> lesConsultations { get; set; }
+        public List<Prescription> lesPrescriptions { get; set; }
     }
 }
