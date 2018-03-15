@@ -8,6 +8,8 @@ namespace PINAC
     {
         public string nom { get; set; }
         public string prenom { get; set; }
+
+        public int numSecu { get; set; }
         public int sexe { get; set; }
         public int age { get; set; }
         public string adresse { get; set; }
