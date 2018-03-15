@@ -16,5 +16,11 @@ namespace PINAC
 		{
 			InitializeComponent ();
 		}
-	}
+
+        public FichePatient(Patient unPatient)
+        {
+            InitializeComponent();
+            this.BindingContext = unPatient;
+        }
+    }
 }

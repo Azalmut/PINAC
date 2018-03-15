@@ -2,11 +2,52 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PINAC.FichePatient">
+    
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <TableView>
+                <TableRoot>
+
+                    <TableSection Title="Identite">
+
+                        <ViewCell>
+                            <ViewCell.View>
+                                <StackLayout>
+                                    <StackLayout Orientation="Horizontal">
+                                        <Label Text="Nom:"/>
+                                        <Entry Text="{Binding nom}"/>
+                                        <Label Text="Prenom:"/>
+                                        <Entry Text="{Binding prenom}"/>
+                                        
+                                        <Label Text="Date de naissance"/>
+                                    </StackLayout>
+      
+                                    
+                                        
+                                        <!--<DatePicker Date="{Binding dateNaiss}" Format="dd/MM/yyyy"/>
+
+                                        <EntryCell Label="Date de naissance:" Text="{Binding dateNaiss}"/>
+                                        <EntryCell Label="Sexe:" Text="{Binding sexe}"/>-->
+                                    
+                                </StackLayout>
+                            </ViewCell.View>
+                            
+                        </ViewCell>
+                        <!--<EntryCell Label="Date de naissance:" Text="{Binding dateNaiss}"/>-->
+                        <!--<EntryCell Label="Sexe:" Text="{Binding sexe}"/>-->
+                    </TableSection>
+
+                    <TableSection Title="Contact">
+                        <EntryCell Label="Adresse:" Text="{Binding adresse}"/>
+                        <EntryCell Label="Code Postal:" Text="{Binding CP}"/>
+                        <EntryCell Label="Ville:" Text="{Binding ville}"/>
+                        <EntryCell Label="Telephone Fixe:" Text="{Binding telFixe}"/>
+                        <EntryCell Label="Telephone mobile:" Text="{Binding mobile}"/>
+                        <EntryCell Label="Email:" Text="{Binding email}"/>
+                        <!--<EntryCell Label="Nom:" Text="{Binding nom}"/>-->
+                    </TableSection>
+                </TableRoot>
+            </TableView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
