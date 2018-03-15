@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PINAC.loginPage"
+             Title="PINAC">
+    <ContentPage.Content>
+        <StackLayout>
+
+            <StackLayout VerticalOptions="Center">
+                <Entry x:Name="entryLogin" Placeholder="login" />
+                <Entry x:Name="entryPassword" Placeholder="password" />
+            </StackLayout>
+            
+            <Button x:Name="btnLogin" Text="Se Connecter" Clicked="btnLogin_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

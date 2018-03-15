@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PINAC.ListConsultation">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+
+            <StackLayout Orientation="Horizontal">
+
+                <StackLayout>
+                    <Label Text="Sexe | " FontAttributes="Bold"/>
+                    <Label Text="Nom | " FontAttributes="Bold"/>
+                    <Label Text="Prénom | " FontAttributes="Bold"/>
+                    <Label Text="Date/Heure | " FontAttributes="Bold"/>
+                    <Label Text="Motif | " FontAttributes="Bold"/>
+                    <Label Text="Urgent" FontAttributes="Bold"/>
+                </StackLayout>
+
+                <!--<StackLayout>
+                    <ListView x:Name="ListConsultation" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ImageCell ImageSource="{Binding sexe}"
+                                           Text="{Binding nom}"
+                                           Detail="{Binding motif dateConsultation}"/>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>-->
+
+                <StackLayout>
+                    <Image Source="{Binding sexe}"/>
+                    <Label Text="{Binding nom}"/>
+                    <Label Text="{Binding prenom}"/>
+                    <Label Text="{Binding dateConsultation}"/>
+                    <Label Text="{Binding motif}"/>
+                    <Label Text="{Binding urgence}"/>
+                </StackLayout>
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
