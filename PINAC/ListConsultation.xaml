@@ -5,36 +5,18 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
 
-            <StackLayout Orientation="Horizontal">
+            <SearchBar x:Name="searchDossierPatient" Placeholder="Recherche du dossier patient" HorizontalOptions="FillAndExpand" SearchButtonPressed="searchDossierPatient_SearchButtonPressed"/>
 
-                <StackLayout>
-                    <Label Text="Sexe | " FontAttributes="Bold"/>
-                    <Label Text="Nom | " FontAttributes="Bold"/>
-                    <Label Text="Prénom | " FontAttributes="Bold"/>
+            <StackLayout Orientation="Vertical">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
                     <Label Text="Date/Heure | " FontAttributes="Bold"/>
                     <Label Text="Motif | " FontAttributes="Bold"/>
-                    <Label Text="Urgent" FontAttributes="Bold"/>
+                    <Label Text="Urgent " FontAttributes="Bold"/>
                 </StackLayout>
 
-                <!--<StackLayout>
-                    <ListView x:Name="ListConsultation" >
-                        <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <ImageCell ImageSource="{Binding sexe}"
-                                           Text="{Binding nom}"
-                                           Detail="{Binding motif dateConsultation}"/>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
-                </StackLayout>-->
-
-                <StackLayout>
-                    <Image Source="{Binding sexe}"/>
-                    <Label Text="{Binding nom}"/>
-                    <Label Text="{Binding prenom}"/>
-                    <Label Text="{Binding dateConsultation}"/>
-                    <Label Text="{Binding motif}"/>
-                    <Label Text="{Binding urgence}"/>
+                <StackLayout Orientation="Horizontal">
+                    <ListView x:Name="listConsultation"/>
                 </StackLayout>
                 
             </StackLayout>

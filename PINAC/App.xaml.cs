@@ -13,8 +13,11 @@ namespace PINAC
 		{
 			InitializeComponent();
 
-			MainPage = new PINAC.MainPage();
-		}
+            // MainPage = new PINAC.MainPage();
+            // MainPage = new PINAC.loginPage();
+            MainPage = new PINAC.ListConsultation();
+
+        }
 
 		protected override void OnStart ()
 		{

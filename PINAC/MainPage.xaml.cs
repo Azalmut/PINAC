@@ -8,10 +8,14 @@ using Xamarin.Forms;
 namespace PINAC
 {
 	public partial class MainPage : ContentPage
-	{
+    {
 		public MainPage()
 		{
 			InitializeComponent();
+
 		}
 	}
 }
+
+
+

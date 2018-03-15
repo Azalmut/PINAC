@@ -17,10 +17,10 @@ namespace PINAC
 			InitializeComponent ();
 		}
 
-        public FichePatient(Patient unPatient)
+        public FichePatient(Patient patient)
         {
             InitializeComponent();
-            this.BindingContext = unPatient;
+            this.BindingContext = patient;
         }
     }
 }
