@@ -9,16 +9,26 @@ namespace PINAC
         public string nom { get; set; }
         public string prenom { get; set; }
 
-        public int numSecu { get; set; }
         public int sexe { get; set; }
-        public int age { get; set; }
+        public string dateNaiss { get; set; }
+        public string CP { get; set; }
+        public string ville { get; set; }
         public string adresse { get; set; }
-        public string telephone { get; set; }
+        public string telFixe { get; set; }
+        public string portable { get; set; }
+        public string email { get; set; }
+
+
 
         public List<string> antePerso { get; set; }
         public List<string> anteFamil { get; set; }
         public List<string> Risques { get; set; }
         public List<Consultation> lesConsultations { get; set; }
         public List<Prescription> lesPrescriptions { get; set; }
+
+        public override string ToString()
+        {
+            return nom + " " + prenom;
+        }
     }
 }

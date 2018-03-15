@@ -44,5 +44,14 @@ namespace PINAC
             string soapRequest = string.Format(soapEnv, fonction);
             return CallWebClient(soapRequest);
         }
+
+        public static Task<string> getPatients(string criteria)
+        {
+            string fonction = string.Format(@"<patients>
+      <criteria>{0}</criteria>
+    </patients>", criteria);
+            string soapRequest = string.Format(soapEnv,  fonction);
+            return CallWebClient(soapRequest);
+        }
     }
 }
