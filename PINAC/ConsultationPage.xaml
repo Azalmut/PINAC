@@ -8,26 +8,28 @@
 
                 <TableSection Title="Informations générales">
                     <EntryCell Label="Date:" Text="{Binding dateHeureRDV}"/>
-                    <EntryCell Label="Motif:" Text="{Binding libelle}"/>
+                    <EntryCell Label="Motif:" Text="{Binding libelle}" />
 
                     
                 </TableSection>
 
                 <TableSection Title="Calculatrice">
+                    <EntryCell x:Name="txtPoids" Label="Poids(kg):" Text="{Binding Poids}" Completed="txtPoids_Completed"/>
+                    <EntryCell x:Name="txtTaille" Label="Taille(cm):" Text="{Binding Taille}" Completed="txtPoids_Completed"/>
                     <ViewCell>
                         <ViewCell.View>
                             <StackLayout Orientation="Horizontal">
-                                <Label Text="Poids:" VerticalTextAlignment="Center"/>
-                                <Entry Date="{Binding Poids}" TextChanged="Entry_TextChanged"/>
+                                    <!--<Label Text="Poids:" VerticalTextAlignment="Center"/>
+                                    <Entry x:Name="txtPoids" Text="{Binding Poids}" HorizontalOptions="Fill" TextChanged="Entry_TextChanged"/>
 
-                                <Label Text="Taille:" VerticalTextAlignment="Center"/>
-                                <Entry Date="{Binding Taille}" TextChanged="Entry_TextChanged"/>
+                                    <Label Text="Taille:" VerticalTextAlignment="Center"/>
+                                    <Entry x:Name="txtTaille" Text="{Binding Taille}" HorizontalOptions="Fill" TextChanged="Entry_TextChanged"/>-->
 
-                                <Label Text="IMC:"/>
+                                    <Label x:Name="lblIMC"  Text="IMC:" VerticalTextAlignment="Center"/>
                             </StackLayout>
-                            
                         </ViewCell.View>
                     </ViewCell>
+                    
                     <EntryCell Label="Tension artérielle:" />
                 </TableSection>
 
@@ -35,13 +37,13 @@
                     <TextCell x:Name="diagnostic"/>
                 </TableSection>
 
-                <TableSection Title="Prescription">
+                <!--<TableSection Title="Prescription">
                     <ViewCell>
                         <ViewCell.View>
                             
                         </ViewCell.View>
                     </ViewCell>
-                </TableSection>
+                </TableSection>-->
             </TableRoot>
         </TableView>
     </ContentPage.Content>
