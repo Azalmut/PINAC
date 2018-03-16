@@ -3,40 +3,46 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PINAC.ConsultationPage">
     <ContentPage.Content>
-        <!--<StackLayout>
-            <Label Text="{Binding idDossier}" />
-            <Label Text="{Binding idPatient}" />
-            <Label Text="{Binding dateConsultation}" />
-            <Label Text="{Binding motif}" />
-            <Label Text="{Binding examClinique}" />
-            <Label Text="{Binding diagnostic}" />
-        </StackLayout>-->
+        <TableView>
+            <TableRoot>
 
-        <StackLayout>
-            <TableView x:Name="Consultation"
-                           Intent="Form">
-                <TableRoot>
-                    <TableSection Title="Consultation">
-                        <EntryCell Label="Patient" Text="{Binding idPatient}"/>
-                        <EntryCell Label="Date" Text="{Binding dateConsultation}"/>
-                        <EntryCell Label="Motif" Text="{Binding motif}"/>
-                        
-                        <ViewCell>
-                            <ViewCell.View>
-                                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
-                                    <Button x:Name="commencerConsultation" 
-                                            Text="Commencer Consultation"
-                                            Clicked="commencerConsultation_Clicked"/>
-                                    <Button x:Name="retourAgenda" 
-                                            Text="Annuler"
-                                            Clicked="retourAgenda_Clicked"/>
-                                </StackLayout>
-                            </ViewCell.View>
-                        </ViewCell>
-                    </TableSection>
+                <TableSection Title="Informations générales">
+                    <EntryCell Label="Date:" Text="{Binding dateHeureRDV}"/>
+                    <EntryCell Label="Motif:" Text="{Binding libelle}"/>
+
                     
-                </TableRoot>
-            </TableView>
-        </StackLayout>
+                </TableSection>
+
+                <TableSection Title="Calculatrice">
+                    <ViewCell>
+                        <ViewCell.View>
+                            <StackLayout Orientation="Horizontal">
+                                <Label Text="Poids:" VerticalTextAlignment="Center"/>
+                                <Entry Date="{Binding Poids}" TextChanged="Entry_TextChanged"/>
+
+                                <Label Text="Taille:" VerticalTextAlignment="Center"/>
+                                <Entry Date="{Binding Taille}" TextChanged="Entry_TextChanged"/>
+
+                                <Label Text="IMC:"/>
+                            </StackLayout>
+                            
+                        </ViewCell.View>
+                    </ViewCell>
+                    <EntryCell Label="Tension artérielle:" />
+                </TableSection>
+
+                <TableSection Title="Diagnostic">
+                    <TextCell x:Name="diagnostic"/>
+                </TableSection>
+
+                <TableSection Title="Prescription">
+                    <ViewCell>
+                        <ViewCell.View>
+                            
+                        </ViewCell.View>
+                    </ViewCell>
+                </TableSection>
+            </TableRoot>
+        </TableView>
     </ContentPage.Content>
 </ContentPage>
