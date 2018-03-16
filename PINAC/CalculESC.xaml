@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PINAC.CalculESC">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Tension" XAlign="Center"/>
+                <Entry x:Name="entryTension" HorizontalOptions="FillAndExpand"/>
+                <Stepper x:Name="stepTension"  Maximum="180"  Minimum="120" Value="120" ValueChanged="stepTension_ValueChanged"/>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Cholesterol" XAlign="Center"/>
+                <Entry x:Name="entryChol" HorizontalOptions="FillAndExpand"/>
+                <Stepper x:Name="stepChol" Maximum="8" Minimum="4" Value="4"  ValueChanged="stepChol_ValueChanged"/>
+            </StackLayout>
+            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Age" XAlign="Center"/>
+                <Entry x:Name="entryAge" HorizontalOptions="FillAndExpand"/>
+                <Stepper x:Name="stepAge" Maximum="65" Minimum="40" Value="40"  ValueChanged="stepAge_ValueChanged" Increment="5"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Homme ?"/>
+                <Switch x:Name="switchSexe" Toggled="switchSexe_Toggled"/>
+            </StackLayout>
+
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Tabac"/>
+                <Switch x:Name="switchTabac" Toggled="switchTabac_Toggled"/>
+            </StackLayout>
+
+            <Label x:Name="lblScore" Text="Score:"/>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
