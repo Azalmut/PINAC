@@ -8,33 +8,19 @@
             <TableView>
                 <TableRoot>
 
-                    <TableSection Title="Identite">
+                    <TableSection Title="Identité">
+                        <EntryCell Label="Nom:" Text="{Binding nom}"/>
+                        <EntryCell Label="Prenom:" Text="{Binding prenom}"/>
 
                         <ViewCell>
                             <ViewCell.View>
-                                <StackLayout>
-                                    <StackLayout Orientation="Horizontal">
-                                        <Label Text="Nom:"/>
-                                        <Entry Text="{Binding nom}"/>
-                                        <Label Text="Prenom:"/>
-                                        <Entry Text="{Binding prenom}"/>
-                                        
-                                        <Label Text="Date de naissance"/>
-                                    </StackLayout>
-      
-                                    
-                                        
-                                        <!--<DatePicker Date="{Binding dateNaiss}" Format="dd/MM/yyyy"/>
-
-                                        <EntryCell Label="Date de naissance:" Text="{Binding dateNaiss}"/>
-                                        <EntryCell Label="Sexe:" Text="{Binding sexe}"/>-->
-                                    
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text="Date de Naissance:" VerticalTextAlignment="Center"/>
+                                    <DatePicker Date="{Binding dateNaiss}" Format="dd/MM/yyyy"/>
                                 </StackLayout>
                             </ViewCell.View>
-                            
                         </ViewCell>
-                        <!--<EntryCell Label="Date de naissance:" Text="{Binding dateNaiss}"/>-->
-                        <!--<EntryCell Label="Sexe:" Text="{Binding sexe}"/>-->
+                        <EntryCell Label="Sexe:" Text="{Binding sexe}"/>
                     </TableSection>
 
                     <TableSection Title="Contact">
@@ -44,7 +30,12 @@
                         <EntryCell Label="Telephone Fixe:" Text="{Binding telFixe}"/>
                         <EntryCell Label="Telephone mobile:" Text="{Binding mobile}"/>
                         <EntryCell Label="Email:" Text="{Binding email}"/>
-                        <!--<EntryCell Label="Nom:" Text="{Binding nom}"/>-->
+                    </TableSection>
+
+                    <TableSection Title="Antécédents">
+                        <EntryCell Label="Antécédents personnels:" Text="{Binding antePerso}"/>
+                        <EntryCell Label="Antécédents familiaux:" Text="{Binding anteFamil}"/>
+                        <EntryCell Label="Facteurs de risque:" Text="{Binding risques}"/>
                     </TableSection>
                 </TableRoot>
             </TableView>
