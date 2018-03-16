@@ -45,12 +45,34 @@ namespace PINAC
             return CallWebClient(soapRequest);
         }
 
+        // WebService qui recupere les patients
         public static Task<string> getPatients(string criteria)
         {
             string fonction = string.Format(@"<patients>
-      <criteria>{0}</criteria>
-    </patients>", criteria);
-            string soapRequest = string.Format(soapEnv,  fonction);
+                                              <criteria>{0}</criteria>
+                                            </patients>", criteria);
+            string soapRequest = string.Format(soapEnv, fonction);
+            return CallWebClient(soapRequest);
+        }
+
+        // WebService qui recupere le dossier d'un patient
+        public static Task<string> getDossierPatient(string id)
+        {
+            string fonction = string.Format(@"<patientDossier>
+                                              <patientId>{0}</patientId>
+                                            </patientDossier>", id);
+
+            string soapRequest = string.Format(soapEnv, fonction);
+            return CallWebClient(soapRequest);
+        }
+
+        // WebService qui recupere un rdv à une certaine date donnée
+        public static Task<string> getRDV(DateTime date)
+        {
+            string fonction = string.Format(@"<rendezVous>
+                                              <dateRdv>{0}</dateRdv>
+                                            </rendezVous>", date);
+            string soapRequest = string.Format(soapEnv, fonction);
             return CallWebClient(soapRequest);
         }
     }
