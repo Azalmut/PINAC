@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
+using Xamarin.Forms;
 
 namespace Score
 {
@@ -251,13 +251,13 @@ namespace Score
             try
             {
 
-                if (ScoreCVD >= 15) return Color.FromArgb(255,124,25,20);
-                if (ScoreCVD >= 10 && ScoreCVD <= 14) return Color.FromArgb(255,183,52,32);
-                if (ScoreCVD >= 5 && ScoreCVD <= 9) return Color.FromArgb(255,233,68,20);
-                if (ScoreCVD >= 3 && ScoreCVD <= 4) return Color.FromArgb(255,246,150,37);
-                if (ScoreCVD == 2) return Color.FromArgb(255,253,189,63);
-                if (ScoreCVD == 1) return Color.FromArgb(255,177,207,59);
-                if (ScoreCVD < 1) return Color.FromArgb(255, 66, 194, 55);
+                if (ScoreCVD >= 15) return Color.FromRgba(124,25, 20, 255);
+                if (ScoreCVD >= 10 && ScoreCVD <= 14) return Color.FromRgba(183,52,32, 255);
+                if (ScoreCVD >= 5 && ScoreCVD <= 9) return Color.FromRgba(233,68,20, 255);
+                if (ScoreCVD >= 3 && ScoreCVD <= 4) return Color.FromRgba(246,150,37, 255);
+                if (ScoreCVD == 2) return Color.FromRgba(253,189,63, 255);
+                if (ScoreCVD == 1) return Color.FromRgba(177,207,59, 255);
+                if (ScoreCVD < 1) return Color.FromRgba(66, 194, 55, 255);
             }
             catch (Exception e)
             {

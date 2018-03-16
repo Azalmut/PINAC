@@ -41,9 +41,10 @@ namespace PINAC
 
         public void calcul()
         {
-            ScoreESC score = new ScoreESC();
+            ScoreESC scoreESC = new ScoreESC();
             int sexe;
             int tabac;
+            int score;
 
             if (this.switchSexe.IsToggled)
                 sexe = 1;
@@ -55,7 +56,10 @@ namespace PINAC
             else
                 tabac = 0;
 
-            this.lblScore.Text = "Score: " + score.calculateScoreCVD(sexe, tabac, Convert.ToInt32(this.stepAge.Value), Convert.ToInt32(this.stepTension.Value), Convert.ToInt32(this.stepChol.Value));
+            score = scoreESC.calculateScoreCVD(sexe, tabac, Convert.ToInt32(this.stepAge.Value), Convert.ToInt32(this.stepTension.Value), Convert.ToInt32(this.stepChol.Value));
+            this.lblScore.Text = "Score: " + score;
+            this.lblScore.BackgroundColor = scoreESC.getColorFromScore(score);
+
         }
 
         private void switchSexe_Toggled(object sender, ToggledEventArgs e)
