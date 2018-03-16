@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PINAC.Agenda">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+
+            <SearchBar x:Name="searchRDV" Placeholder="Recherche d'un RDV" HorizontalOptions="FillAndExpand" SearchButtonPressed="searchRDV_SearchButtonPressed"/>
+
+            <StackLayout Orientation="Vertical">
+
+                <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                    <Label Text="Date/Heure | " FontAttributes="Bold"/>
+                    <Label Text="Motif | " FontAttributes="Bold"/>
+                    <Label Text="Urgent " FontAttributes="Bold"/>
+                </StackLayout>
+
+                <StackLayout Orientation="Horizontal">
+                    <ListView x:Name="listRDV" ItemSelected="lisRDV_ItemSelected"/>
+                </StackLayout>
+                
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

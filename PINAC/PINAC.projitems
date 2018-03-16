@@ -22,16 +22,16 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Claude.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)DossierPatient.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)DossierPatientPage.xaml.cs">
-      <DependentUpon>DossierPatientPage.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)ConsultationPage.xaml.cs">
+      <DependentUpon>ConsultationPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)FichePatient.xaml.cs">
       <DependentUpon>FichePatient.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ListConsultation.xaml.cs">
-      <DependentUpon>ListConsultation.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Agenda.xaml.cs">
+      <DependentUpon>Agenda.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)listePatient.xaml.cs">
@@ -49,7 +49,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Prescription.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListConsultation.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Agenda.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -79,7 +79,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)DossierPatientPage.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ConsultationPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

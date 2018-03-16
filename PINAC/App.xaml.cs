@@ -15,7 +15,7 @@ namespace PINAC
 
             // MainPage = new PINAC.MainPage();
             // MainPage = new PINAC.loginPage();
-            MainPage = new PINAC.ListConsultation();
+            MainPage = new PINAC.Agenda();
 
         }
 

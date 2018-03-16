@@ -26,7 +26,7 @@ namespace PINAC
             string responseSOAP = await getStringTask;
 
             if(login == "house" && password == "aaaaaa")
-                await Navigation.PushModalAsync(new ListConsultation(), true);
+                await Navigation.PushModalAsync(new Agenda(), true);
             else
                 await DisplayAlert("Réponse SOAP", responseSOAP, "OK");
         }

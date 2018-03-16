@@ -15,7 +15,7 @@ namespace PINAC
 
         public override string ToString()
         {
-            return idDossier + idPatient + dateConsultation + motif;
+            return idDossier + " | " + idPatient + " | " + dateConsultation + " | " + motif;
         }
     }
 }

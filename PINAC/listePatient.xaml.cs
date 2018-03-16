@@ -19,23 +19,6 @@ namespace PINAC
             chargerListe("");
         }
 
-        //async private void Handle_Clicked(object sender, EventArgs e)
-        //{
-        //    //string nom;
-        //    //nom = this.searchPatient.Text;
-
-        //    //WebClient client = new WebClient();
-        //    //Task<string> getStringTask = client.DownloadStringTaskAsync(new Uri("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + ville + "%2C%20ak%22)&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"));
-
-        //    //string pageMeteo = await getStringTask;
-        //    //XElement xml = XElement.Parse(pageMeteo);
-
-        //    //XNamespace yweather = XNamespace.Get("http://xml.weather.yahoo.com/ns/rss/1.0");
-
-
-        //    //this.laListe.ItemsSource = query;
-        //}
-
         async private void chargerListe(string criteria)
         {
             Task<string> getStringTask = Claude.getPatients(criteria);
