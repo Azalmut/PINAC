@@ -26,13 +26,6 @@ namespace PINAC
             return getStringTask;
         }
 
-        // WebService aboutClaude
-        //public static Task<string> aboutClaude()
-        //{
-        //    string soapRequest = string.Format(soapEnv, "<aboutClaude />");
-        //    return CallWebClient(soapRequest);
-        //}
-
         // WebService userLogin
         public static Task<string> userLogin(string login, string password)
         {
@@ -67,7 +60,7 @@ namespace PINAC
         }
 
         // WebService qui recupere un rdv à une certaine date donnée
-        public static Task<string> getRDV(DateTime date)
+        public static Task<string> getRDV(string date)
         {
             string fonction = string.Format(@"<rendezVous>
                                               <dateRdv>{0}</dateRdv>

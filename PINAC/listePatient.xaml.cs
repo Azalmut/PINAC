@@ -10,32 +10,16 @@ using Xamarin.Forms.Xaml;
 
 namespace PINAC
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class listePatient : ContentPage
-	{
-		public listePatient ()
-		{
-			InitializeComponent ();
-            chargerListe("");
-		}
-
-        async private void Handle_Clicked(object sender, EventArgs e)
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class listePatient : ContentPage
+    {
+        public listePatient()
         {
-            //string nom;
-            //nom = this.searchPatient.Text;
-
-            //WebClient client = new WebClient();
-            //Task<string> getStringTask = client.DownloadStringTaskAsync(new Uri("https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22" + ville + "%2C%20ak%22)&format=xml&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys"));
-
-            //string pageMeteo = await getStringTask;
-            //XElement xml = XElement.Parse(pageMeteo);
-
-            //XNamespace yweather = XNamespace.Get("http://xml.weather.yahoo.com/ns/rss/1.0");
-
-            
-            //this.laListe.ItemsSource = query;
+            InitializeComponent();
+            chargerListe("");
         }
 
+        // Permet de charger la liste des Patients
         async private void chargerListe(string criteria)
         {
             Task<string> getStringTask = Claude.getPatients(criteria);
@@ -50,6 +34,7 @@ namespace PINAC
                 var query = from item in xmlData.Descendants("PAT_Patient")
                             select new Patient
                             {
+                                id = item.Element("id").Value,
                                 nom = item.Element("Nom").Value,
                                 prenom = item.Element("Prenom").Value,
                                 dateNaiss = item.Element("DateNaiss").Value,
@@ -62,17 +47,19 @@ namespace PINAC
                                 email = item.Element("Email").Value,
 
                             };
-                await DisplayAlert("Reponse SOAP", responseSOAP, "ok");
+                //await DisplayAlert("Reponse SOAP", responseSOAP, "ok");
 
                 this.laListe.ItemsSource = query;
             }
         }
 
+        // Renvoie vers le dossier du patient selectionné dans la liste
         async private void laListe_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             await Navigation.PushModalAsync(new FichePatient((sender as ListView).SelectedItem as Patient), true);
         }
 
+        // Charge la liste en fonction de la recherche effectuée
         private void searchPatient_SearchButtonPressed(object sender, EventArgs e)
         {
             chargerListe(this.searchPatient.Text);

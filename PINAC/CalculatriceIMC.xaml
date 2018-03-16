@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PINAC.CalculatriceIMC">
+    <ContentPage.Content>
+        <TableView>
+            <TableRoot>
+                
+                <TableSection Title="Calculatrice">
+                    
+                    <EntryCell x:Name="txtPoids" Label="Poids(kg):" Completed="txtPoids_Completed" Keyboard="Numeric"/>
+                    <EntryCell x:Name="txtTaille" Label="Taille(cm):" Completed="txtPoids_Completed" Keyboard="Numeric"/>
+
+                    <TextCell x:Name="lblIMC"  Text="IMC:"/>
+                    <TextCell x:Name="messageIMC" />
+
+                    
+                    <EntryCell Label="Tension artérielle:" />
+                </TableSection>
+
+                <TableSection Title="Diagnostic">
+                    <TextCell x:Name="diagnostic"/>
+                </TableSection>
+                
+            </TableRoot>
+        </TableView>
+    </ContentPage.Content>
+</ContentPage>

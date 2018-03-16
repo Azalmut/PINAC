@@ -11,5 +11,10 @@ namespace PINAC
         public string dateHeureRDV { get; set; }
         public string patient { get; set; }
         public string etatRDV { get; set; }
+
+        public override string ToString()
+        {
+            return patient + " " + dateHeureRDV + " " + libelle;
+        }
     }
 }

@@ -4,8 +4,10 @@ using System.Text;
 
 namespace PINAC
 {
-    class Patient
+    public class Patient
     {
+        public string id { get; set; }
+
         public string nom { get; set; }
         public string prenom { get; set; }
 
@@ -23,8 +25,8 @@ namespace PINAC
         public List<string> antePerso { get; set; }
         public List<string> anteFamil { get; set; }
         public List<string> Risques { get; set; }
-        public List<Consultation> lesConsultations { get; set; }
-        public List<Prescription> lesPrescriptions { get; set; }
+        //public List<DossierPatient> lesDossiers { get; set; }
+        //public List<Prescription> lesPrescriptions { get; set; }
 
         public override string ToString()
         {

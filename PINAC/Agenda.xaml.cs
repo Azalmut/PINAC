@@ -17,43 +17,8 @@ namespace PINAC
         {
             InitializeComponent();
 
-             chargerListeRDV("16/03/2018");
+            chargerListeRDV("16/03/2018");
         }
-
-        //async private void chargerListeDossier(string id)
-        //{
-        //    Task<string> getStringTask = Claude.getDossierPatient(id);
-        //    string responseSOAP = await getStringTask;
-
-        //    XElement xml = XElement.Parse(responseSOAP);
-
-        //    if(xml.Descendants("Success").FirstOrDefault().Value == "true")
-        //    {
-        //        string data = xml.Descendants("Data").FirstOrDefault().Value;
-        //        XElement xmlData = XElement.Parse(data);
-        //        var query = from item in xmlData.Descendants("PAT_Consult")
-        //                    select new DossierPatient
-        //                    {
-        //                        idDossier = item.Element("id").Value,
-        //                        idPatient = item.Element("PatientId").Value,
-        //                        dateConsultation = Convert.ToDateTime(item.Element("DateConsult").Value),
-        //                        motif = item.Element("Motif").Value,
-        //                        examClinique = item.Element("ExamClinique").Value,
-        //                        diagnostic = item.Element("Diagnostic").Value
-        //                    };
-
-        //        //var query2 = from item in xmlData.Descendants("PAT_Patient")
-        //        //             where item.Element("id") == item.Element("PatientId")
-        //        //             select new Patient
-        //        //             {
-
-        //        //             };
-
-        //        await DisplayAlert("Alert consultation", responseSOAP, "OK");
-
-        //        this.listRDV.ItemsSource = query;
-        //    }
-        //}
 
         async private void chargerListeRDV(string date)
         {
@@ -74,26 +39,27 @@ namespace PINAC
                                 dateHeureRDV = item.Element("DateRendezVous").Value,
                             };
 
-                await DisplayAlert("Alert RDV", responseSOAP, "OK");
+                // await DisplayAlert("Alert RDV", responseSOAP, "OK");
 
                 this.listRDV.ItemsSource = query;
             }
-        }        
-
-        private void searchRDV_SearchButtonPressed(object sender, EventArgs e)
-        {
-            //chargerListeRDV(Convert.ToDateTime(this.searchRDV.Text));
         }
 
+        // affiche la consultation d'un patient au click 
         async private void lisRDV_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             await Navigation.PushModalAsync(new ConsultationPage((sender as ListView).SelectedItem as RDV), true);
         }
 
+
         private void btnResponseSoap_Clicked(object sender, EventArgs e)
         {
-
             chargerListeRDV("2018-03-16");
         }
+        // tentative pour deselectionner un item dans la liste
+        //private void Agenda_Appearing(object sender, EventArgs e)
+        //{
+        //    this.listRDV.SelectedItem = null;
+        //}
     }
 }

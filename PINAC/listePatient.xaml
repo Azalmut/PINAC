@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <SearchBar x:Name="searchPatient" Placeholder="Recherche d'un patient" HorizontalOptions="FillAndExpand" SearchButtonPressed="searchPatient_SearchButtonPressed"/>
-            
+
             <ListView x:Name="laListe" ItemSelected="laListe_ItemSelected">
             </ListView>
         </StackLayout>

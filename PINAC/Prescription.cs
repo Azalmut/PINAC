@@ -4,7 +4,7 @@ using System.Text;
 
 namespace PINAC
 {
-    class Prescription
+    public class Prescription
     {
         public DateTime datePrescription { get; set; }
         public bool ALD { get; set; }

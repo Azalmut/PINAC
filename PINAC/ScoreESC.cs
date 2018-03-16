@@ -10,7 +10,7 @@ namespace Score
 
         Dictionary<int, Dictionary<int, Dictionary<int, int[,]>>> myArrays = new Dictionary<int, Dictionary<int, Dictionary<int, int[,]>>>();
         Dictionary<int, Dictionary<int, int[,]>> myWomenArrays = new Dictionary<int, Dictionary<int, int[,]>>();
-        Dictionary<int, Dictionary<int, int[,]>> myMenArrays = new Dictionary<int, Dictionary<int, int[,]>>();        
+        Dictionary<int, Dictionary<int, int[,]>> myMenArrays = new Dictionary<int, Dictionary<int, int[,]>>();
 
 
         Dictionary<int, int[,]> myWomenSmokerArrays = new Dictionary<int, int[,]>();
@@ -19,16 +19,16 @@ namespace Score
         Dictionary<int, int[,]> myMenNonSmokerArrays = new Dictionary<int, int[,]>();
 
         // Tableau à 2 dimension [ligne,colonne]
-        int[,] Array1 = new int[4,5];         int[,] Array2 = new int[4,5];         int[,] Array3 = new int[4,5];
-        int[,] Array4 = new int[4,5];         int[,] Array5 = new int[4,5];         int[,] Array6 = new int[4,5];
-        int[,] Array7 = new int[4,5];         int[,] Array8 = new int[4,5];         int[,] Array9 = new int[4,5];
-        int[,] Array10 = new int[4,5];        int[,] Array11 = new int[4,5];        int[,] Array12 = new int[4,5];
-        int[,] Array13 = new int[4,5];        int[,] Array14 = new int[4,5];        int[,] Array15 = new int[4,5];
-        int[,] Array16 = new int[4,5];        int[,] Array17 = new int[4,5];        int[,] Array18 = new int[4,5];
-        int[,] Array19 = new int[4,5];        int[,] Array20 = new int[4,5];
+        int[,] Array1 = new int[4, 5]; int[,] Array2 = new int[4, 5]; int[,] Array3 = new int[4, 5];
+        int[,] Array4 = new int[4, 5]; int[,] Array5 = new int[4, 5]; int[,] Array6 = new int[4, 5];
+        int[,] Array7 = new int[4, 5]; int[,] Array8 = new int[4, 5]; int[,] Array9 = new int[4, 5];
+        int[,] Array10 = new int[4, 5]; int[,] Array11 = new int[4, 5]; int[,] Array12 = new int[4, 5];
+        int[,] Array13 = new int[4, 5]; int[,] Array14 = new int[4, 5]; int[,] Array15 = new int[4, 5];
+        int[,] Array16 = new int[4, 5]; int[,] Array17 = new int[4, 5]; int[,] Array18 = new int[4, 5];
+        int[,] Array19 = new int[4, 5]; int[,] Array20 = new int[4, 5];
 
-         
-            
+
+
         public ScoreESC()
         {
             // La clé est le sexe, on accéde au tableau par myArrays.get(laValeurDuSexe)
@@ -48,7 +48,7 @@ namespace Score
             Array1[2, 0] = 0; Array1[2, 1] = 0; Array1[2, 2] = 0; Array1[2, 3] = 0; Array1[2, 4] = 0;
             Array1[1, 0] = 0; Array1[1, 1] = 0; Array1[1, 2] = 0; Array1[1, 3] = 0; Array1[1, 4] = 0;
             Array1[0, 0] = 0; Array1[0, 1] = 0; Array1[0, 2] = 0; Array1[0, 3] = 0; Array1[0, 4] = 0;
-            myWomenNonSmokerArrays.Add (40, Array1);
+            myWomenNonSmokerArrays.Add(40, Array1);
 
             // Matrice 2 = Women + Smoker + 40
             Array2[3, 0] = 0; Array2[3, 1] = 0; Array2[3, 2] = 0; Array2[3, 3] = 0; Array2[3, 4] = 0;
@@ -190,7 +190,7 @@ namespace Score
 
         public int calculateScoreCVD(int Sexe, int Tabac, int cAge, int cPAS, float cCT)
         {
-         
+
 
             int AgeArrondi = -1;
 
@@ -231,7 +231,7 @@ namespace Score
                     Dictionary<int, int[,]> myAgeArray = myTabacArray[Tabac];
                     int[,] myScoreArray = myAgeArray[AgeArrondi];
 
-                    return myScoreArray[iPAS,iCT] ;
+                    return myScoreArray[iPAS, iCT];
                 }
                 catch (Exception e)
                 {
@@ -251,17 +251,17 @@ namespace Score
             try
             {
 
-                if (ScoreCVD >= 15) return Color.FromRgba(124,25, 20, 255);
-                if (ScoreCVD >= 10 && ScoreCVD <= 14) return Color.FromRgba(183,52,32, 255);
-                if (ScoreCVD >= 5 && ScoreCVD <= 9) return Color.FromRgba(233,68,20, 255);
-                if (ScoreCVD >= 3 && ScoreCVD <= 4) return Color.FromRgba(246,150,37, 255);
-                if (ScoreCVD == 2) return Color.FromRgba(253,189,63, 255);
-                if (ScoreCVD == 1) return Color.FromRgba(177,207,59, 255);
+                if (ScoreCVD >= 15) return Color.FromRgba(124, 25, 20, 255);
+                if (ScoreCVD >= 10 && ScoreCVD <= 14) return Color.FromRgba(183, 52, 32, 255);
+                if (ScoreCVD >= 5 && ScoreCVD <= 9) return Color.FromRgba(233, 68, 20, 255);
+                if (ScoreCVD >= 3 && ScoreCVD <= 4) return Color.FromRgba(246, 150, 37, 255);
+                if (ScoreCVD == 2) return Color.FromRgba(253, 189, 63, 255);
+                if (ScoreCVD == 1) return Color.FromRgba(177, 207, 59, 255);
                 if (ScoreCVD < 1) return Color.FromRgba(66, 194, 55, 255);
             }
             catch (Exception e)
             {
-                return Color.White ;
+                return Color.White;
             }
             return Color.White;
         }

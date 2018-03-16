@@ -12,11 +12,10 @@ namespace PINAC
 		public App ()
 		{
 			InitializeComponent();
+            MainPage = new MainPage();
+        }
 
-			MainPage = new PINAC.MainPage();
-		}
-
-		protected override void OnStart ()
+        protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}
