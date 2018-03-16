@@ -5,7 +5,8 @@
     <ContentPage.Content>
         <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand">
 
-            <SearchBar x:Name="searchRDV" Placeholder="Recherche d'un RDV" HorizontalOptions="FillAndExpand" SearchButtonPressed="searchRDV_SearchButtonPressed"/>
+            <!--<SearchBar x:Name="searchRDV" Placeholder="Recherche d'un RDV" HorizontalOptions="FillAndExpand" SearchButtonPressed="searchRDV_SearchButtonPressed"/>-->
+            <Button x:Name="btnResponseSoap" Text="ResponseSoap" Clicked="btnResponseSoap_Clicked" />
 
             <StackLayout Orientation="Vertical">
 
@@ -18,7 +19,7 @@
                 <StackLayout Orientation="Horizontal">
                     <ListView x:Name="listRDV" ItemSelected="lisRDV_ItemSelected"/>
                 </StackLayout>
-                
+
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>
